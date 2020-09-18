@@ -34,7 +34,7 @@ mean(pull(prob1_df, char_vec))
 mean(pull(prob1_df, factor_vec))
 ```
 
-I can take the mean of numbers and logical but not character or factor.
+I can take the mean of numbers and logical variable but not character or factor variable.
 
 
 ```{r_as.numeric}
@@ -44,10 +44,17 @@ as.numeric(pull(prob1_df, char_vec))
 as.numeric(pull(prob1_df, factor_vec))
 ```
 
-I cannot convert character to numeric, but I can convert logical and factor as numeric.
+I cannot convert the character variable to numeric, but I can convert the logical and factor variables as numeric. Since the logical variable is on a binary scale, it makes sense that we could calculate the mean of this set of responses, even though it would not have any meaning.
 
-```{r}
+```{r_var_conversion_calculations}
 as.numeric(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
+as.factor(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
+as.numeric(as.factor(pull(prob1_df, samp_gt_0))) * pull(prob1_df, samp)
 ```
 
 ##Problem 2
+
+```{r}
+
+```
+
