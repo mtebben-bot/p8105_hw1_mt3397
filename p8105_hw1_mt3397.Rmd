@@ -1,5 +1,5 @@
 ---
-title: "HW1"
+title: HW1
 author: Megan Tebbenhoff
 output: github_document
 ---
@@ -52,9 +52,21 @@ as.factor(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
 as.numeric(as.factor(pull(prob1_df, samp_gt_0))) * pull(prob1_df, samp)
 ```
 
-##Problem 2
+## Problem 2
 
-```{r}
+Before beginning Problem 2, I installed "palmerpenguins" to obtain the penguins dataset.
 
+```{r_data_summary}
+data("penguins", package = "palmerpenguins")
+penguins_df = 
+  (summary.data.frame(penguins))
+penguins_df
+#There are three species with varying numbers of observations: Adelie (152), Chinstrap (68), and Gentoo (124). There are three islands with varying numbers of observations: Biscoe (168), Dream (124), and Torgersen (52). The data was collected between 2007 and 2009, and they collected information regarding sex, body mass (g), bill length (mm), bill depth (mm), flipper length (mm).
+nrow(penguins)
+#There are 344 rows in this dataset.
+ncol(penguins)
+#There are 8 columns in this dataset.
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+#The mean flipper length is 200.9 mm.
 ```
 
